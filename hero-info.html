@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/font-awesome.css" />
+    <link rel="stylesheet" href="css/spinner.css" />
+    <link rel="stylesheet" href="css/hero-info.css" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <header class="header"></header>
+
+    <main class="hero-info">
+      <div class="hero-info__section">
+
+      </div>
+    </main>
+
+    <script>
+      localStorage.setItem("page", "info");
+      document.getElementsByClassName("header")[0].innerHTML =
+        sessionStorage.getItem("main-toggle");
+      document.getElementsByClassName("header__search")[0].remove();
+    </script>
+    <script src="./node_modules/axios/dist/axios.min.js"></script>
+    <script src="js/toggle.js"></script>
+    <script src="js/axiosTest.js"></script>
+    <script>
+      const url = new URL(window.location.href);
+      window.onload = getHeroesInfo(url.search.split("=")[1]);
+      
+      window.onload = checkTheme;
+    </script>
+  </body>
+</html>

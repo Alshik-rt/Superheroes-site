@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/font-awesome.css" />
+    <link rel="stylesheet" href="css/spinner.css" />
+
+    <title>Document</title>
+  </head>
+  <body>
+    
+
+    <header class="header">
+      <a href="./"
+        ><img src="img/logo.png" alt="header_logo" class="header_logo"
+      /></a>
+      <div class="header__nav">
+        <div class="header__search">
+          <input name="s" placeholder="Search" type="search" onchange="getHeroesInfo('all', this.value);"/>
+          <button type="submit"></button>
+        </div>
+
+        <div class="header__theme-toggle">
+          <div class="header__toggle"></div>
+        </div>
+      </div>
+    </header>
+    <main class="hero-section">
+      <div class="sk-chase" id="spinner">
+        <div class="sk-chase-dot"></div>
+        <div class="sk-chase-dot"></div>
+        <div class="sk-chase-dot"></div>
+        <div class="sk-chase-dot"></div>
+        <div class="sk-chase-dot"></div>
+        <div class="sk-chase-dot"></div>
+      </div>
+    </main>
+
+    
+
+    <script src="./node_modules/axios/dist/axios.min.js"></script>
+    <script src="js/toggle.js"></script>
+    <script src="js/axiosTest.js"></script>
+    <script>
+      document.getElementsByClassName("hero-section")[0].onload = getHeroesInfo("all", "");
+      pageContent = document.getElementsByClassName("header")[0].innerHTML;
+      sessionStorage.setItem("main-toggle", pageContent);
+      localStorage.setItem("page", "main");
+    </script>
+  </body>
+</html>
